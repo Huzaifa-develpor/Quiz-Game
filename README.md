@@ -1,16 +1,82 @@
-# React + Vite
+# 🎮 Quiz Game
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📌 Overview
 
-Currently, two official plugins are available:
+Quiz Game is an interactive web application built using **React.js** and **CSS**.
+The game presents multiple-choice questions to the user, calculates the score in real time, and displays the final result at the end.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+This project was created to practice **React fundamentals, state management, and dynamic UI rendering**.
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## ✨ Features
 
-## Expanding the ESLint configuration
+* 🧠 Multiple-choice questions system
+* ⚡ Real-time score tracking
+* 🔄 Dynamic question rendering
+* 📊 Final result display at the end
+* 🎯 Simple and interactive UI
+* 📱 Responsive design
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🛠️ Technologies Used
+
+* React.js
+* CSS3
+* JavaScript (ES6)
+
+---
+
+## ⚙️ How It Works
+
+The application uses React state management to control:
+
+* Current question index
+* User score
+* Answer selection
+
+Based on user interaction, the UI updates dynamically without page reload.
+
+---
+
+### 📌 Core Concept Example
+
+```js id="quiz_logic"
+const [currentQuestion, setCurrentQuestion] = useState(0);
+const [score, setScore] = useState(0);
+
+function handleAnswer(isCorrect) {
+  if (isCorrect) {
+    setScore(score + 1);
+  }
+  setCurrentQuestion(currentQuestion + 1);
+}
+```
+
+---
+
+## 🧠 Learning Outcomes
+
+* React components structure
+* useState hook usage
+* Event handling in React
+* Conditional rendering
+* Dynamic UI updates
+* Component-based architecture
+
+---
+
+## 🚀 Future Improvements
+
+* ⏱️ Add timer for each question
+* 🏆 Add leaderboard system
+* 🎨 Improve UI/UX design
+* 📊 Add progress bar
+* 🌐 Fetch questions from API
+
+---
+
+## 👨‍💻 Author
+
+Huzaifa Anwar
