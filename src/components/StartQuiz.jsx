@@ -20,8 +20,13 @@ const StartQuiz = () => {
   const [selected, setSelected] = useState(null);
   const [showResult, setShowResult] = useState(false);
 
-  const checkResult = (e) => {
-    setSelected(e.target.value);
+  const handleOptionClick = (value, e) => {
+    setSelected(value);
+    
+    const radioInput = e.currentTarget.querySelector('.checkedValue');
+    if (radioInput) {
+      radioInput.checked = true;
+    }
   };
 
   const next = () => {
@@ -75,23 +80,23 @@ const StartQuiz = () => {
             <p>{currentSessionQuestions[index].question}</p>
           </div>
           <div className="option-list">
-            <div className="option">
-              <input name='select' type="radio" className='checkedValue' onChange={checkResult} value={currentSessionQuestions[index].options[0]} />
+            <div className="option" onClick={(e) => handleOptionClick(currentSessionQuestions[index].options[0], e)}>
+              <input name='select' type="radio" className='checkedValue' readOnly checked={selected === currentSessionQuestions[index].options[0]} />
               <p>{currentSessionQuestions[index].options[0]}</p>
             </div>
 
-            <div className="option">
-              <input name='select' type="radio" className='checkedValue' onChange={checkResult} value={currentSessionQuestions[index].options[1]} />
+            <div className="option" onClick={(e) => handleOptionClick(currentSessionQuestions[index].options[1], e)}>
+              <input name='select' type="radio" className='checkedValue' readOnly checked={selected === currentSessionQuestions[index].options[1]} />
               <p>{currentSessionQuestions[index].options[1]}</p>
             </div>
 
-            <div className="option">
-              <input name='select' type="radio" className='checkedValue' onChange={checkResult} value={currentSessionQuestions[index].options[2]} />
+            <div className="option" onClick={(e) => handleOptionClick(currentSessionQuestions[index].options[2], e)}>
+              <input name='select' type="radio" className='checkedValue' readOnly checked={selected === currentSessionQuestions[index].options[2]} />
               <p>{currentSessionQuestions[index].options[2]}</p>
             </div>
 
-            <div className="option">
-              <input name='select' type="radio" className='checkedValue' onChange={checkResult} value={currentSessionQuestions[index].options[3]} />
+            <div className="option" onClick={(e) => handleOptionClick(currentSessionQuestions[index].options[3], e)}>
+              <input name='select' type="radio" className='checkedValue' readOnly checked={selected === currentSessionQuestions[index].options[3]} />
               <p>{currentSessionQuestions[index].options[3]}</p>
             </div>
           </div>
